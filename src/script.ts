@@ -1,34 +1,106 @@
-import { Player } from './Classes/Player.js';
+// TUPLES
 
- const mashrafi = new Player("Mashrafi", 40, "Bangladesh");
- const shakib = new Player("Shakib", 36, "Bangladesh");
+let a = [3,'hello', {p:3}];
+let b: [number, string, {p: number}] = [3,'hello', {p:3}];
 
-console.log(shakib.age);
-console.log(shakib.country);
+b.push(4); // Allowed, but not recommended as it breaks the tuple structure
+console.log(b); // Output: [3, 'hello', { p: 3 }, 4]
+
+// TUPLES with REST parameters
+let c: [number, ...string[]] = [1, 'hello', 'world'];
+c.push('TypeScript'); // Allowed
+console.log(c); // Output: [1, 'hello', 'world', 'TypeScript']
 
 
-  const players: Player[] = [];
 
+// //Enums
 
- players.push(shakib);
- players.push(mashrafi);
+// enum Rtype {
+//   SUCCESS,
+//   FAILURE,
+//   UNAUTHORIZED,
+//   FORBIDDEN,
+// }
 
-interface RectangleOption{
-   width: number;
-   length: number;
-}
+// interface APIResponse<T> {
+//   status: number;
+//   type: Rtype;
+//   data: T;
+// }
 
-function drawRectangle(options: RectangleOption) {
-   let width = options.width;
-   let length = options.length;
-}
-   
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: Rtype.FAILURE,
+//   data: "Data fetched successfully",
+// };
 
-drawRectangle({
-   width: 20,
-   length: 30
-})
+// console.log(response1);
+// GENERICS
 
+// interface APIResponse<T> {
+//   status: number;
+//   type: string;
+//   data: T;
+// }
+
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: "success",
+//   data: "Data fetched successfully",
+// };
+
+// const addID = <
+//   T extends {
+//     name: string;
+//     age: number;
+//   }
+// >(
+//   obj: T
+// ) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+
+// let user = addID({
+//   name: "Rakib",
+//   age: 25,
+//   country: "Bangladesh",
+// });
+
+// // let user = "Rakib";
+
+// addID(user);
+
+// import { Player } from './Classes/Player.js';
+// import { IsPlayer } from './interface/IsPlayer.js';
+
+//  const mashrafi = new Player("Mashrafi", 40, "Bangladesh");
+//  let shakib : IsPlayer;
+
+// console.log(shakib.country);
+
+//   const players: IsPlayer[] = [];
+
+//  players.push(shakib);
+//  players.push(mashrafi);
+
+// interface RectangleOption{
+//    width: number;
+//    length: number;
+// }
+
+// function drawRectangle(options: RectangleOption) {
+//    let width = options.width;
+//    let length = options.length;
+// }
+
+// let threeDOptions: RectangleOption & { depth: number } = {
+//    width: 20,
+//    length: 30,
+//    depth: 40
+// };
+
+// drawRectangle(threeDOptions)
 
 // Lession 10 done
 //   class  Player {
@@ -45,7 +117,6 @@ drawRectangle({
 
 //   const mashrafi = new Player("Mashrafi", 40, "Bangladesh");
 //   const shakib = new Player("Shakib", 36, "Bangladesh");
-
 
 //   class  Player {
 //     private name: string;
@@ -71,14 +142,11 @@ drawRectangle({
 //  shakib.age = 36;
 //  shakib.country = "india"; // Allowed, as 'age' is public
 
-
- //  const players: Player[] = [];
-
+//  const players: Player[] = [];
 
 //  players.push(shakib);
 //  players.push(mashrafi);
- 
- 
+
 //  class  Player {
 //     name: string;
 //     age: number;
@@ -103,7 +171,6 @@ drawRectangle({
 //  players.push(shakib);
 //  players.push(mashrafi);
 
-
 // 8 no video done
 // let userDetails : (id:number | string, userInfo: {
 //     name: string,
@@ -114,7 +181,7 @@ drawRectangle({
 //     name: string;
 //     age: number;
 // }) => {
-    
+
 // }
 
 // let calculation: (x: number, y:number, z: string) => number;
@@ -128,7 +195,7 @@ drawRectangle({
 // }
 
 // console.log(calculation(5,7,"minus"));
- 
+
 // let add: (x:number, y: number)=> number;
 
 // add = (a:number, b: number) =>{
@@ -149,7 +216,7 @@ drawRectangle({
 //     console.log(`Hello ${user.age > 50 ? "sir" : "Mr."}, ${user.name}`);
 // }
 
-// 6 no video done 
+// 6 no video done
 
 // const myFunc = (a: number, b:number , c:string = "rakib"): string =>{
 //     return a + b;
@@ -163,7 +230,6 @@ drawRectangle({
 // }
 
 // myFunc("Rakib", "Sumit" ,"zaheen");
-
 
 // let myFunc: Function;
 
@@ -193,8 +259,6 @@ drawRectangle({
 // a = 5;
 // a = "rakib";
 
-
-
 //normal variable
 //  let b: string | number;
 //  //array
@@ -218,7 +282,6 @@ drawRectangle({
 
 //Array
 // let a:(string | number)[] = [];
-
 
 // let a: string;
 // let b: number;
@@ -250,13 +313,11 @@ drawRectangle({
 
 // fruits.push("grape");
 
-
 //  function multiply(a : number,b :  number){
 //     return a * b;
 //  }
 
 //  console.log(multiply(10, 5));
-
 
 // let playerName ;
 // playerName = "sakib";
@@ -265,14 +326,13 @@ drawRectangle({
 
 // console.log(playerName)
 // let playerName = "Mashrafi";
- 
+
 // let age = 45;
 // console.log(playerName);
 
 // age = "Shakib";
 
 // console.log(playerName);
-
 
 // const country = "I love Bangladesh";
 

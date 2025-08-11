@@ -1,19 +1,81 @@
-import { Player } from './Classes/Player.js';
-const mashrafi = new Player("Mashrafi", 40, "Bangladesh");
-const shakib = new Player("Shakib", 36, "Bangladesh");
-console.log(shakib.age);
-console.log(shakib.country);
-const players = [];
-players.push(shakib);
-players.push(mashrafi);
-function drawRectangle(options) {
-    let width = options.width;
-    let length = options.length;
-}
-drawRectangle({
-    width: 20,
-    length: 30
-});
+// TUPLES
+let a = [3, 'hello', { p: 3 }];
+let b = [3, 'hello', { p: 3 }];
+b.push(4); // Allowed, but not recommended as it breaks the tuple structure
+console.log(b); // Output: [3, 'hello', { p: 3 }, 4]
+// TUPLES with REST parameters
+let c = [1, 'hello', 'world'];
+c.push('TypeScript'); // Allowed
+console.log(c); // Output: [1, 'hello', 'world', 'TypeScript']
+// //Enums
+// enum Rtype {
+//   SUCCESS,
+//   FAILURE,
+//   UNAUTHORIZED,
+//   FORBIDDEN,
+// }
+// interface APIResponse<T> {
+//   status: number;
+//   type: Rtype;
+//   data: T;
+// }
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: Rtype.FAILURE,
+//   data: "Data fetched successfully",
+// };
+// console.log(response1);
+// GENERICS
+// interface APIResponse<T> {
+//   status: number;
+//   type: string;
+//   data: T;
+// }
+// const response1: APIResponse<string> = {
+//   status: 200,
+//   type: "success",
+//   data: "Data fetched successfully",
+// };
+// const addID = <
+//   T extends {
+//     name: string;
+//     age: number;
+//   }
+// >(
+//   obj: T
+// ) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+// let user = addID({
+//   name: "Rakib",
+//   age: 25,
+//   country: "Bangladesh",
+// });
+// // let user = "Rakib";
+// addID(user);
+// import { Player } from './Classes/Player.js';
+// import { IsPlayer } from './interface/IsPlayer.js';
+//  const mashrafi = new Player("Mashrafi", 40, "Bangladesh");
+//  let shakib : IsPlayer;
+// console.log(shakib.country);
+//   const players: IsPlayer[] = [];
+//  players.push(shakib);
+//  players.push(mashrafi);
+// interface RectangleOption{
+//    width: number;
+//    length: number;
+// }
+// function drawRectangle(options: RectangleOption) {
+//    let width = options.width;
+//    let length = options.length;
+// }
+// let threeDOptions: RectangleOption & { depth: number } = {
+//    width: 20,
+//    length: 30,
+//    depth: 40
+// };
+// drawRectangle(threeDOptions)
 // Lession 10 done
 //   class  Player {
 //     constructor (
@@ -101,7 +163,7 @@ drawRectangle({
 // const sayHello = (user: userType) => {
 //     console.log(`Hello ${user.age > 50 ? "sir" : "Mr."}, ${user.name}`);
 // }
-// 6 no video done 
+// 6 no video done
 // const myFunc = (a: number, b:number , c:string = "rakib"): string =>{
 //     return a + b;
 // }
