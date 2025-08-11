@@ -1,2 +1,2 @@
-declare const country = "I love Bangladesh";
+export {};
 //# sourceMappingURL=script.d.ts.map
